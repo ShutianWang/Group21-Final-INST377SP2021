@@ -39,37 +39,8 @@ router.get('/albums/:album_id', async (req, res) => {
   }
 });
 
-// router.post('/dining', async (req, res) => {
-//   const halls = await db.DiningHall.findAll();
-//   const currentId = (await halls.length) + 1;
-//   try {
-//     const newDining = await db.DiningHall.create({
-//       hall_id: currentId,
-//       hall_name: req.body.hall_name,
-//       hall_address: req.body.hall_address,
-//       hall_lat: req.body.hall_lat,
-//       hall_long: req.body.hall_long
-//     });
-//     res.json(newDining);
-//   } catch (err) {
-//     console.error(err);
-//     res.error('Server error');
-//   }
-// });
 
-// router.delete('/dining/:hall_id', async (req, res) => {
-//   try {
-//     await db.DiningHall.destroy({
-//       where: {
-//         hall_id: req.params.hall_id
-//       }
-//     });
-//     res.send('Successfully Deleted');
-//   } catch (err) {
-//     console.error(err);
-//     res.error('Server error');
-//   }
-// });
+
 
 // router.put('/dining', async (req, res) => {
 //   try {
@@ -118,25 +89,57 @@ router.get('/artist/:artist_id', async (req, res) => {
   }
 });
 
-// router.put('/meals', async (req, res) => {
-//   try {
-//     await db.Meals.update(
-//       {
-//         meal_name: req.body.meal_name,
-//         meal_category: req.body.meal_category
-//       },
-//       {
-//         where: {
-//           meal_id: req.body.meal_id
-//         }
-//       }
-//     );
-//     res.send('Meal Successfully Updated');
-//   } catch (err) {
-//     console.error(err);
-//     res.error('Server error');
-//   }
-// });
+router.post('/artist', async (req, res) => {
+  const artists = await db.artist.findAll();
+  const currentId = (await artists.length) + 1;
+  try {
+    const newArtist = await db.artist.create({
+      artist_id: currentId,
+      artist_name: req.body.artist_name,
+      artist_label: req.body.artist_label
+    });
+    res.json(newArtist);
+  } catch (err) {
+    console.error(err);
+    res.error('Server error');
+  }
+});
+
+router.put('/artist', async (req, res) => {
+  try {
+    await db.artist.update(
+      {
+        artist_name: req.body.artist_name,
+        artist_label: req.body.artist_label
+      },
+      {
+        where: {
+          artist_id: req.body.artist_id
+        }
+      }
+    );
+    res.send('Successfully Updated');
+  } catch (err) {
+    console.error(err);
+    res.error('Server error');
+  }
+
+  router.delete('/artist/:artist_id', async (req, res) => {
+    try {
+      await db.artist.destroy({
+        where: {
+          artist_id: req.params.artist_id
+        }
+      });
+      res.send('Successfully Deleted');
+    } catch (err) {
+      console.error(err);
+      res.error('Server error');
+    }
+  });
+
+
+
 
 /// /////////////////////////////////
 /// ////////charting info Endpoints/////////
