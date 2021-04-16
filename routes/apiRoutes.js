@@ -123,20 +123,21 @@ router.put('/artist', async (req, res) => {
     console.error(err);
     res.error('Server error');
   }
+});
 
-  router.delete('/artist/:artist_id', async (req, res) => {
-    try {
-      await db.artist.destroy({
-        where: {
-          artist_id: req.params.artist_id
-        }
-      });
-      res.send('Successfully Deleted');
-    } catch (err) {
-      console.error(err);
-      res.error('Server error');
-    }
-  });
+router.delete('/artist/:artist_id', async (req, res) => {
+  try {
+    await db.artist.destroy({
+      where: {
+        artist_id: req.params.artist_id
+      }
+    });
+    res.send('Successfully Deleted');
+  } catch (err) {
+    console.error(err);
+    res.error('Server error');
+  }
+});
 
 
 
@@ -228,7 +229,7 @@ router.get('/songs:song_id', async (req, res) => {
 //////////////////////////////////////
 // ///////////Genre Endpoints/////////
 //////////////////////////////////////
-router.get('/genre', async (req, res) => {
+router.get('/genres', async (req, res) => {
   try {
     const genres = await db.genre.findAll();
     res.json(genres);
