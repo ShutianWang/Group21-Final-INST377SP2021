@@ -1,3 +1,5 @@
+import Songs from "./Songs";
+
 export default (sequelize, DataTypes) => {
     const Charting = sequelize.define(
       'Charting',
