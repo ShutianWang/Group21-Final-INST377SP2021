@@ -1,6 +1,6 @@
 export default (sequelize, DataTypes) => {
-    const Artist = sequelize.define(
-      'Artist',
+    const Artists = sequelize.define(
+      'Artists',
       {
         artist_id: {
           type: DataTypes.INTEGER,
@@ -12,7 +12,6 @@ export default (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false,
             unique: true,
-            primaryKey: true
         },
         artist_name: {
           type: DataTypes.STRING
@@ -20,5 +19,5 @@ export default (sequelize, DataTypes) => {
       },
       { freezeTableName: true, timestamps: false }
     );
-    return Artist;
+    return Artists;
   };
