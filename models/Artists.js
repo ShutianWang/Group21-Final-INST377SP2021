@@ -12,7 +12,6 @@ export default (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false,
             unique: true,
-            primaryKey: true
         },
         artist_name: {
           type: DataTypes.STRING
