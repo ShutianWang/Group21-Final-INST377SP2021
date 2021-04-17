@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 /// /////////////////////////////////
 router.get('/albums', async (req, res) => {
   try {
-    const albums = await db.albumInfo.findAll();
+    const albums = await db.AlbumInfo.findAll();
     //const reply = albums.length > 0 ? { data: albums } : { message: 'no results found' };
     res.json(albums);
   } catch (err) {
@@ -26,7 +26,7 @@ router.get('/albums', async (req, res) => {
 
 router.get('/albums/:album_id', async (req, res) => {
   try {
-    const album = await db.albumInfo.findAll({
+    const album = await db.AlbumInfo.findAll({
       where: {
         album_id: req.params.album_id
       }
@@ -65,9 +65,9 @@ router.get('/albums/:album_id', async (req, res) => {
 /// /////////////////////////////////
 /// ////////artist Endpoints//////////
 /// /////////////////////////////////
-router.get('/artist', async (req, res) => {
+router.get('/artists', async (req, res) => {
   try {
-    const artists = await db.artist.findAll();
+    const artists = await db.artists.findAll();
     res.json(artists);
   } catch (err) {
     console.error(err);
@@ -75,9 +75,9 @@ router.get('/artist', async (req, res) => {
   }
 });
 
-router.get('/artist/:artist_id', async (req, res) => {
+router.get('/artists/:artist_id', async (req, res) => {
   try {
-    const artists = await db.artist.findAll({
+    const artists = await db.artists.findAll({
       where: {
         artist_id: req.params.artist_id
       }
@@ -90,10 +90,10 @@ router.get('/artist/:artist_id', async (req, res) => {
 });
 
 router.post('/artist', async (req, res) => {
-  const artists = await db.artist.findAll();
+  const artists = await db.artists.findAll();
   const currentId = (await artists.length) + 1;
   try {
-    const newArtist = await db.artist.create({
+    const newArtist = await db.artists.create({
       artist_id: currentId,
       artist_name: req.body.artist_name,
       artist_label: req.body.artist_label
@@ -107,7 +107,7 @@ router.post('/artist', async (req, res) => {
 
 router.put('/artist', async (req, res) => {
   try {
-    await db.artist.update(
+    await db.artists.update(
       {
         artist_name: req.body.artist_name,
         artist_label: req.body.artist_label
@@ -231,7 +231,7 @@ router.get('/songs:song_id', async (req, res) => {
 //////////////////////////////////////
 router.get('/genres', async (req, res) => {
   try {
-    const genres = await db.genre.findAll();
+    const genres = await db.genres.findAll();
     res.json(genres);
   } catch (err) {
     console.error(err);
@@ -241,7 +241,7 @@ router.get('/genres', async (req, res) => {
 
 router.get('/genres:song_id', async (req, res) => {
   try {
-    const genres = await db.genre.findAll({
+    const genres = await db.genres.findAll({
       where: {
         song_id: req.params.song_id
       }
