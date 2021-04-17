@@ -16,7 +16,6 @@ router.get('/', (req, res) => {
 router.get('/albums', async (req, res) => {
   try {
     const albums = await db.AlbumInfo.findAll();
-    //const reply = albums.length > 0 ? { data: albums } : { message: 'no results found' };
     res.json(albums);
   } catch (err) {
     console.error(err);
@@ -39,28 +38,6 @@ router.get('/albums/:album_id', async (req, res) => {
   }
 });
 
-
-
-
-// router.put('/dining', async (req, res) => {
-//   try {
-//     await db.DiningHall.update(
-//       {
-//         hall_name: req.body.hall_name,
-//         hall_location: req.body.hall_location
-//       },
-//       {
-//         where: {
-//           hall_id: req.body.hall_id
-//         }
-//       }
-//     );
-//     res.send('Successfully Updated');
-//   } catch (err) {
-//     console.error(err);
-//     res.error('Server error');
-//   }
-// });
 
 /// /////////////////////////////////
 /// ////////artist Endpoints//////////
@@ -147,8 +124,8 @@ router.delete('/artist/:artist_id', async (req, res) => {
 /// /////////////////////////////////
 router.get('/charting', async (req, res) => {
   try {
-    const charting = await db.charting_info.findAll();
-    res.send(charting);
+    const charting_info = await db.Charting.findAll();
+    res.send(charting_info);
   } catch (err) {
     console.error(err);
     res.error('Server error');
@@ -157,45 +134,19 @@ router.get('/charting', async (req, res) => {
 
 router.get('/charting/:charting_id', async (req, res) => {
   try {
-    const charting = await db.charting_info.findAll({
+    const charting_info = await db.Charting.findAll({
       where: {
         charting_id: req.params.charting_id
       }
     });
-    res.json(meals);
+    res.json(charting_info);
   } catch (err) {
     console.error(err);
     res.error('Server error');
   }
 });
 
-// router.put('/macros', async (req, res) => {
-//   try {
-//     // N.B. - this is a good example of where to use code validation to confirm objects
-//     await db.Macros.update(
-//       {
-//         meal_name: req.body.meal_name,
-//         meal_category: req.body.meal_category,
-//         calories: req.body.calories,
-//         serving_size: req.body.serving_size,
-//         cholesterol: req.body.cholesterol,
-//         sodium: req.body.sodium,
-//         carbs: req.body.carbs,
-//         protein: req.body.protein,
-//         fat: req.body.fat
-//       },
-//       {
-//         where: {
-//           meal_id: req.body.meal_id
-//         }
-//       }
-//     );
-//     res.send('Successfully Updated');
-//   } catch (err) {
-//     console.error(err);
-//     res.error('Server error');
-//   }
-// });
+
 
 /// /////////////////////////////////
 /// ////////Songs Endpoints//////////
@@ -252,54 +203,6 @@ router.get('/genres:song_id', async (req, res) => {
     res.error('Server error');
   }
 });
-// /// //////////////////////////////////
-// /// ///////Custom SQL Endpoint////////
-// /// /////////////////////////////////
-// const macrosCustom = 'SELECT `Dining_Hall_Tracker`.`Meals`.`meal_id` AS `meal_id`,`Dining_Hall_Tracker`.`Meals`.`meal_name` AS `meal_name`,`Dining_Hall_Tracker`.`Macros`.`calories` AS `calories`,`Dining_Hall_Tracker`.`Macros`.`carbs` AS `carbs`,`Dining_Hall_Tracker`.`Macros`.`sodium` AS `sodium`,`Dining_Hall_Tracker`.`Macros`.`protein` AS `protein`,`Dining_Hall_Tracker`.`Macros`.`fat` AS `fat`,`Dining_Hall_Tracker`.`Macros`.`cholesterol` AS `cholesterol`FROM(`Dining_Hall_Tracker`.`Meals`JOIN `Dining_Hall_Tracker`.`Macros`)WHERE(`Dining_Hall_Tracker`.`Meals`.`meal_id` = `Dining_Hall_Tracker`.`Macros`.`meal_id`)';
-// router.get('/table/data', async (req, res) => {
-//   try {
-//     const result = await db.sequelizeDB.query(macrosCustom, {
-//       type: sequelize.QueryTypes.SELECT
-//     });
-//     res.json(result);
-//   } catch (err) {
-//     console.error(err);
-//     res.error('Server error');
-//   }
-// });
 
-// const mealMapCustom = `SELECT hall_name,
-//   hall_address,
-//   hall_lat,
-//   hall_long,
-//   meal_name
-// FROM
-//   Meals m
-// INNER JOIN Meals_Locations ml 
-//   ON m.meal_id = ml.meal_id
-// INNER JOIN Dining_Hall d
-// ON d.hall_id = ml.hall_id;`;
-// router.get('/map/data', async (req, res) => {
-//   try {
-//     const result = await db.sequelizeDB.query(mealMapCustom, {
-//       type: sequelize.QueryTypes.SELECT
-//     });
-//     res.json(result);
-//   } catch (err) {
-//     console.error(err);
-//     res.error('Server error');
-//   }
-// });
-// router.get('/custom', async (req, res) => {
-//   try {
-//     const result = await db.sequelizeDB.query(req.body.query, {
-//       type: sequelize.QueryTypes.SELECT
-//     });
-//     res.json(result);
-//   } catch (err) {
-//     console.error(err);
-//     res.error('Server error');
-//   }
-// });
 
 export default router;
