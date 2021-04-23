@@ -13,4 +13,4 @@ async function songsTable() {
         resTable.append(appendItem)
     });
 }
-window.onload = diningTable;
+window.onload = songsTable;
