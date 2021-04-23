@@ -18,13 +18,18 @@ async function chartingTable() {
     
     chartingData.data.forEach((item) => {
         let chartSong = songsData[item.song_id]
-        let ChArtist = artistData[item.artist_id].artist_name;
-        let chartGenre = genreData[item.genre_id].genre_name;
+        let ChArtist = artistData[chartSong.artist_id].artist_name;
+        let chartGenre = genreData[chartSong.genre_id].genre_name;
 
-        console.log(item)
         const appendItem = document.createElement('tr');
-        appendItem.innerHTML = `<td>${item.charting_id}</td><td>${item.song_name}</td><td>${songArtist}</td><td>${songGenre}</td><td>${item.song_duration}</td>`
-        resTable.append(appendItem)
+        appendItem.innerHTML = `<td>${item.charting_id}</td>
+        <td>${chartSong.song_name}</td>
+        <td>${ChArtist}</td>
+        <td>${item.peak_on_chart}</td>
+        <td>${item.weeks_on_chart}</td>
+        <td>${item.latest_position}</td>
+        <td>${chartGenre}</td>`
+        chartTable.append(appendItem)
     });
 }
 window.onload = chartingTable;
