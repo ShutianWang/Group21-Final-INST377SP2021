@@ -9,47 +9,92 @@
 </head>
 
 <body>
-  <section class="music">
-    <nav class="navbar is-primary" role="navigation" aria-label="main navigarion">
-      <a class="navbar-item">
+<div class="container is-black">
+  <section class = "hero">
+    <div class="hero-body">
+      <p class="title has-text-centered">
+        LOGO
+      </p>
+    </div>
+  </section>
+
+
+      <!-- <a class="navbar-item">
         <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">>
-      </a> 
-      <span class="navbar-burger" data-target="navbarMenuMusic">
+      </a>  -->
+      <!-- <span class="navbar-burger" data-target="navbarMenuMusic">
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
-        </a>
-      </span>
+        </a> -->
+      <!-- </span> -->
 
+ <!-- center nav items -->
+ 
+ <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+      
       <div id="navbarMenuMusic" class="navbar-menu">
-        <div class="navbar-end">
-          <a class="navbar-item is active" >
+        <div class="navbar-start is-center">
+          <a class="navbar-item is-active" >
             Home
           </a>
 
-          <div class="navbar-item has-dropdown is hoverable">
             <a class="navbar-item" href="submit.html" >
               Submit
             </a>
 
-            <div class="navbar-dropdown">
               <a class="navbar-item" href="about.html" >
                 About
               </a>
-            </div>
+            
           </div>
         </div>
-      </div> 
     </nav>
-  
+
+    <div class="columns mt-5">
+      <div class="column">
+        <!-- This form will need to be remade to suit our purposes, these will not all be text types in the end this is mostly demonstration -->
+        <form>
+          <ul class="flex-outer">
+            <li>
+              <label for="search">Search</label>
+              <input id="search" type="text"  name="search" placeholder="search database here">
+            </li>
+            <li>
+              <label for="song">Songs</label>
+              <input id="song" type="text" name="song" placeholder="enter song here">
+            </li>
+            <li>
+              <label for="artist">Artists</label>
+              <input id="artist" type="text" name="artist" placeholder="enter artist here">
+            </li>
+            <li>
+              <label for= "genre">Genre</label>
+              <input id="genre" type="text" name="genre" placeholder="enter genre here">
+            </li>
+            <li>
+              <label for="charting">Charting</label>
+              <input id="charting" type="text" name="charting" placeholder="enter charting info here">
+            </li>
+            <li> this form will need to be thought through some more</li>
+          </ul>
+        </form>
+      </div>
+
+      <div class="column">
+        <p>Data visualization will go here. User will enter information in form to narrow variables to be investigated</p>
+      </div>
+
+    </div>
+
     <div class="buttons">
       <a class="buttons" placeholder="Search..."></a>
     </div>
 
-    <div class="left-body">
+    <!-- <div class="left-body">
       <div class="container has-text-centered">
-        <a class="title" href="artist.html">
+        <a class="subtitle" href="artist.html">
           Artists
         </a>
         <a class="subtitle" href="albums.html">
@@ -59,13 +104,12 @@
           Genre
         </a>
       </div>
-    </div>     
-   </section>
+    </div>      -->
 
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
-          <strong>Billboard Top 100</strong>by 
+          <strong>Billboard Top 100 </strong>by 
           <a href="https://github.com/ShutianWang/Group21-Final-INST377SP2021">
           Matt Morrison, Christian Love, Paul Savchuk, Shutian Wang, Ucheoma Okonkwo</a>
         </p>
@@ -76,5 +120,6 @@
     </footer>
 
     <script type="text/javascript" src="scripts.js"></script>
+  </div>
 </body>
 </html>
