@@ -1,13 +1,22 @@
 
 async function songsTable() {
+
+    console.log(fetch("/api/songs"))
+
     const songs = await fetch("/api/songs");
+    console.log(songs)
     const songsData = await songs.json();
+    console.log(songsData)
 
     const artists = await fetch("/api/artist");
+    console.log(artists)
     const artistData = await artists.json();
+    console.log(artistData)
 
     const genres = await fetch("/api/genres");
+    console.log(genres)
     const genreData = await genres.json();
+    console.log(genreData)
 
     const songTable = document.querySelector(".tableBody");
     console.log(songTable)
