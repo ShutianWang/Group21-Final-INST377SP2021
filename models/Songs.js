@@ -28,11 +28,11 @@ export default (sequelize, DataTypes) => {
         },
         song_name: {
           type: DataTypes.STRING,
-          allowNull: false
+          
         },
         song_duration: {
           type: DataTypes.STRING,
-          allowNull: false
+          
         }
       },
       { freezeTableName: true, timestamps: false }
