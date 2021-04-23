@@ -6,7 +6,7 @@ async function songsTable() {
     const artists = await fetch("/api/artist");
     const artistData = await artists.json();
 
-    const genres = await fetch("api/genres");
+    const genres = await fetch("/api/genres");
     const genreData = await genres.json();
 
     const songTable = document.querySelector(".tableBody");

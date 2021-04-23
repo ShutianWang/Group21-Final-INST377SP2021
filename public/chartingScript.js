@@ -9,20 +9,21 @@ async function chartingTable() {
     const genres = await fetch("api/genres");
     const genreData = await genres.json();
 
-    const songs = await fetch("api/charting");
-    const songsData = await songs.json()
+    const songs = await fetch("api/songs");
+    const songsData = await songs.json();
 
-    const songTable = document.querySelector(".tableBody");
+    const chartTable = document.querySelector(".tableBody");
     console.log(songTable)
     console.log(chartingData);
     
     chartingData.data.forEach((item) => {
-        let songArtist = artistData[item.artist_id].artist_name;
-        let songGenre = genreData[item.genre_id].genre_name;
+        let chartSong = songsData[item.song_id]
+        let ChArtist = artistData[item.artist_id].artist_name;
+        let chartGenre = genreData[item.genre_id].genre_name;
 
         console.log(item)
         const appendItem = document.createElement('tr');
-        appendItem.innerHTML = `<td>${item.song_id}</td><td>${item.song_name}</td><td>${songArtist}</td><td>${songGenre}</td><td>${item.song_duration}</td>`
+        appendItem.innerHTML = `<td>${item.charting_id}</td><td>${item.song_name}</td><td>${songArtist}</td><td>${songGenre}</td><td>${item.song_duration}</td>`
         resTable.append(appendItem)
     });
 }
