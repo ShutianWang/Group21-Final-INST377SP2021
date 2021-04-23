@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class='container'>
+    <div class="container">
     <section class = "hero">
         <div class="hero-body">
           <p class="title has-text-centered">
@@ -17,6 +17,25 @@
           </p>
         </div>
       </section>
+      <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+      
+        <div id="navbarMenuMusic" class="navbar-menu">
+          <div class="navbar-start is-center">
+            <a class="navbar-item"  href="index.html">
+              Home
+            </a>
+  
+              <a class="navbar-item is-active" href="submit.html" >
+                Submit
+              </a>
+  
+                <a class="navbar-item" href="about.html" >
+                  About
+                </a>
+              
+            </div>
+          </div>
+      </nav>
     
     <!-- <div class="header">
         <h1>Submit</h1>
@@ -24,7 +43,7 @@
 
     <div>
         <!-- well probably need to make this form much more extensive to include all params in db -->
-        <from action="container">
+        <form>
             <ul class="flex-outer">
                 <li>
                 <label for="artistname">Artist Name*</label>
@@ -44,8 +63,7 @@
             </li>
             <li>
                 <label for="message">Description</label>
-                <textarea name="messagr" rows="10" cols="35"
-                id="message">
+                <textarea name="message" rows="10" cols="35" id="message"></textarea>
             </li>
             <li>
                 <button name="submit" class="button" id="submit" type="submit">
@@ -53,9 +71,21 @@
                 </button>
               </li>
             </ul>
-        </from>
+        </form>
     </div>
 
+    <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong>Billboard Top 100 </strong>by 
+            <a href="https://github.com/ShutianWang/Group21-Final-INST377SP2021">
+            Matt Morrison, Christian Love, Paul Savchuk, Shutian Wang, Ucheoma Okonkwo</a>
+          </p>
+          <p>
+            INST377 Spring 2021 Group 21
+          </p>
+        </div>
+    </footer>
 </div>   
 </body>
 </html>
