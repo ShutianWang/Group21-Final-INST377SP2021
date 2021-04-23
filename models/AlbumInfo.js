@@ -1,5 +1,3 @@
-import Artist from "./Artists.js";
-
 export default (sequelize, DataTypes) => {
     const AlbumInfo = sequelize.define(
       'AlbumInfo',
@@ -14,7 +12,6 @@ export default (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false,
             unique: true,
-            references: {model: Artist, key: "artist_id"}
         },
         album_name: {
             type: DataTypes.STRING
