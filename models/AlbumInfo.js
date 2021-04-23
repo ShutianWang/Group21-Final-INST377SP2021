@@ -1,4 +1,4 @@
-import Artist from "./Artist";
+import Artist from "./Artists.js";
 
 export default (sequelize, DataTypes) => {
     const AlbumInfo = sequelize.define(
