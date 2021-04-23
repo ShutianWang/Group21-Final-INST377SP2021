@@ -1,5 +1,3 @@
-import Songs from "./Songs";
-
 export default (sequelize, DataTypes) => {
     const Charting = sequelize.define(
       'Charting',
@@ -12,7 +10,6 @@ export default (sequelize, DataTypes) => {
         song_id: {
           type: DataTypes.STRING,
           allowNull: false,
-          references: {model: Songs, key: "song_id"}
         },
         peak_on_chart: {
             type: DataTypes.INTEGER
