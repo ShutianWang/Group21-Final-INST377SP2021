@@ -3,7 +3,7 @@ export default {
     username: 'student',
     password: 'INST377@UMD',
     database: 'billboard_db',
-    host: 'localhost',
+    host: '3.236.243.212',
     port: '3306',
     dialect: 'mysql'
   },
@@ -11,7 +11,7 @@ export default {
     username: 'student',
     password: 'INST377@UMD',
     database: 'billboard_db',
-    host: 'localhost',
+    host: '3.236.243.212',
     port: '3306',
     dialect: 'mysql'
   },
@@ -19,7 +19,7 @@ export default {
     username: 'student',
     password: 'INST377@UMD',
     database: 'billboard_db',
-    host: 'localhost',
+    host: '3.236.243.212',
     port: '3306',
     dialect: 'mysql'
   }
