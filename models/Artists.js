@@ -10,7 +10,6 @@ export default (sequelize, DataTypes) => {
         },
         label_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
             unique: true,
         },
         artist_name: {
