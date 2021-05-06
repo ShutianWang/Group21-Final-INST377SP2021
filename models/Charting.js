@@ -24,7 +24,7 @@ export default (sequelize, DataTypes) => {
             type: DataTypes.DATE
         }
       },
-      { freezeTableName: true, timestamps: false }
+      { tableName: "charting_info", freezeTableName: true, timestamps: false }
     );
     return Charting;
   };
