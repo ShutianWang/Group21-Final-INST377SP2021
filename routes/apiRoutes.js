@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 /// /////////////////////////////////
 router.get('/albums', async (req, res) => {
   try {
-    const albums = await db.album_info.findAll();
+    const albums = await db.AlbumInfo.findAll();
     res.json(albums);
   } catch (err) {
     console.error(err);
@@ -25,7 +25,7 @@ router.get('/albums', async (req, res) => {
 
 router.get('/albums/:album_id', async (req, res) => {
   try {
-    const album = await db.album_info.findAll({
+    const album = await db.AlbumInfo.findAll({
       where: {
         album_id: req.params.album_id
       }
