@@ -16,7 +16,7 @@ export default (sequelize, DataTypes) => {
           type: DataTypes.STRING
         }
       },
-      { freezeTableName: true, timestamps: false }
+      { tableName: "artist", freezeTableName: true, timestamps: false }
     );
     return Artists;
   };
