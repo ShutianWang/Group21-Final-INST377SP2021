@@ -6,5 +6,28 @@ The music industry is a competitive one, and there is often more to it than just
 ## Website
 https://evening-sea-24521.herokuapp.com/
 
+## Target Browsers
+* Chrome
+* Firefox
+* Safari
+
 ## Links
 * [About Us](https://evening-sea-24521.herokuapp.com/about.html)
+
+# Developer Manual
+
+## Installation
+
+## Running on a Server
+
+## Running Tests
+Currently there are no tests prebuilt.
+Cypress allows customs tests to be run, and is one of the packages. To start Cypress:
+1. Start the server using "npm start"
+2. Start Cypress using "npm test"
+
+## API
+
+## Known Bugs
+
+## Future Development
