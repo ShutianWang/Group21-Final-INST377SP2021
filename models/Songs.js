@@ -1,6 +1,6 @@
 export default (sequelize, DataTypes) => {
     const Songs = sequelize.define(
-      'songs',
+      'Songs',
       {
         song_id: {
           type: DataTypes.INTEGER,
@@ -35,7 +35,7 @@ export default (sequelize, DataTypes) => {
           
         }
       },
-      { freezeTableName: true, timestamps: false }
+      { tableName: "songs", freezeTableName: true, timestamps: false }
     );
     return Songs;
 };
