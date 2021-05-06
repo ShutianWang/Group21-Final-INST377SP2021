@@ -13,10 +13,10 @@ async function chartingTable() {
     const songsData = await songs.json();
 
     const chartTable = document.querySelector(".tableBody");
-    console.log(songTable)
+ 
     console.log(chartingData);
     
-    chartingData.data.forEach((item) => {
+    chartingData.forEach((item) => {
         let chartSong = songsData[item.song_id]
         let ChArtist = artistData[chartSong.artist_id].artist_name;
         let chartGenre = genreData[chartSong.genre_id].genre_name;
