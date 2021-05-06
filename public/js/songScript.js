@@ -22,9 +22,9 @@ async function songsTable() {
     console.log(songTable)
     console.log(songsData);
     
-    songsData.data.forEach((item) => {
-        let songArtist = artistData[item.artist_id].artist_name;
-        let songGenre = genreData[item.genre_id].genre_name;
+    songsData.forEach((item) => {
+        const songArtist = artistData[item.artist_id].artist_name;
+        const songGenre = genreData[item.genre_id].genre_name;
         const appendItem = document.createElement('tr');
         appendItem.innerHTML = `<td>${item.song_id}</td><td>${item.song_name}</td><td>${songArtist}</td><td>${songGenre}</td><td>${item.song_duration}</td>`
         songTable.append(appendItem)
