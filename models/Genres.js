@@ -12,7 +12,7 @@ export default (sequelize, DataTypes) => {
           type: DataTypes.STRING
         }
       },
-      { freezeTableName: true, timestamps: false }
+      { tableName: "genre",freezeTableName: true, timestamps: false }
     );
     return Genres;
 };
