@@ -18,7 +18,7 @@ async function chartingTable() {
     
     chartingData.forEach((item) => {
         let chartSong = songsData[item.song_id]
-        let ChArtist = artistData[chartSong.artist_id].artist_name;
+        let ChArtist = artistData[item.song_id].artist_name;
         let chartGenre = genreData[chartSong.genre_id].genre_name;
 
         const appendItem = document.createElement('tr');
@@ -28,6 +28,7 @@ async function chartingTable() {
         <td>${item.peak_on_chart}</td>
         <td>${item.weeks_on_chart}</td>
         <td>${item.latest_position}</td>
+        <td>${item.last_week_on_chart}</td>
         <td>${chartGenre}</td>`
         chartTable.append(appendItem)
     });
