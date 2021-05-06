@@ -18,7 +18,7 @@ async function albumTable() {
     const albumTable = document.querySelector(".tableBody");
 
     
-    albumData.data.forEach((item) => {
+    albumData.forEach((item) => {
         let albumArtist = artistData[item.artist_id].artist_name;
         
 
