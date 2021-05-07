@@ -38,33 +38,30 @@ async function getData() {
 
         let parts = albumReleaseDate.split('-');
 
-        console.log(albumReleaseDate);
-
-        return {x: new Date(parts[0], parts[1] - 1, parts[2]), y: peakOnChart, indexLabel: item.song_name, markerType: "circle",  markerColor: "#6B8E23"}
+        return {x: new Date(parts[0], parts[1] - 1, parts[2]), y: Number(peakOnChart), indexLabel: item.song_name}
         return {name:item.song_name, artist:songArtist, genre:songGenre, peakposition:peakOnChart, release:albumReleaseDate}
     });
 
-    console.log(chartingData);
     console.log(results)
 
     loadVisualization(results);
 }
 
 
-function loadVisualization(data) {
+function loadVisualization(_data) {
     var chart = new CanvasJS.Chart("chartContainer", {
-            animationEnabled: true,
-            theme: "light2",
-            title:{
-            text: "Song Line Chart"
-        },
+        animationEnabled: true,
+        theme: "dark1",
+        title:{text: "Song Line Chart"},
         axisX: {
-            interval: 1,
-            intervalType: "month"
+            title: "Release Date"
+        },
+        axisY: {
+            title: "Peak Position on Billboard"
         },
         data: [{
             type: "line",
-            dataPoints: [data]
+            dataPoints: _data
         }]
     });
 
