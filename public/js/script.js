@@ -10,7 +10,6 @@ async function getTable() {
 async function windowActions() {
     console.log('Javascript is connected!');
     await getData();
-    loadVisualization();
 }
 
 async function getData() {
@@ -39,16 +38,16 @@ async function getData() {
         let parts = albumReleaseDate.split('-');
 
         return {x: new Date(parts[0], parts[1] - 1, parts[2]), y: Number(peakOnChart), indexLabel: item.song_name}
-        return {name:item.song_name, artist:songArtist, genre:songGenre, peakposition:peakOnChart, release:albumReleaseDate}
+        //return {name:item.song_name, artist:songArtist, genre:songGenre, peakposition:peakOnChart, release:albumReleaseDate}
     });
-
-    console.log(results)
-
-    loadVisualization(results);
+    
+   loadVisualization(results);
 }
 
 
 function loadVisualization(_data) {
+    console.log(_data);
+
     var chart = new CanvasJS.Chart("chartContainer", {
         animationEnabled: true,
         theme: "dark1",
@@ -61,6 +60,7 @@ function loadVisualization(_data) {
         },
         data: [{
             type: "line",
+            markerSize: 12,
             dataPoints: _data
         }]
     });
