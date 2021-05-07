@@ -1,5 +1,5 @@
-const amountToDisplay = 50;
-const maxAmountToDisplay = 355;
+
+let data;
 
 async function getTable() {
     const request = await fetch('/api/artisticMovement');
@@ -15,8 +15,6 @@ async function windowActions() {
 
 async function getData() {
 
-    let i = 0;
-    let interval = Math.floor(maxAmountToDisplay / amountToDisplay);
 
     const songs = await fetch("/api/songs");
     const songsData = await songs.json();
@@ -49,11 +47,51 @@ async function getData() {
 
     results.sort(function(a, b) {
         return b.x - a.x
-    })
+    });
 
-   loadVisualization(results);
+    console.log(results);
+    data = results;
+
+    filterData();
+  
 }
 
+function filterData()
+{
+    let _data = data;
+    let startDate = document.getElementById("startdate").value;
+
+    if(startDate == "")
+    {
+        startDate = new Date("2016-07-03");
+    }
+    else
+    {
+        let parts = startDate.split('-');
+        startDate = new Date(parts[0], parts[1] - 1, parts[2]);
+    }
+
+    console.log(startDate);
+    _data = _data.filter((item) => item.x > startDate);
+
+    let endDate = document.getElementById("enddate").value;
+
+    if(endDate == "")
+    {
+        endDate = new Date("2019-11-22");
+    }
+    else
+    {
+        let parts = endDate.split('-');
+        endDate = new Date(parts[0], parts[1] - 1, parts[2]);
+    }
+
+    console.log(endDate);
+
+    _data = _data.filter((item) => item.x < endDate);
+
+    loadVisualization(_data);
+}
 
 function loadVisualization(_data) {
     console.log(_data);

@@ -75,7 +75,7 @@
     <div class="columns mt-5">
       <div class="column">
         <!-- This form will need to be remade to suit our purposes, these will not all be text types in the end this is mostly demonstration -->
-        <form>
+        <form onchange="filterData()">
           <ul class="flex-outer">
             <li>
               <label for="search">Search</label>
@@ -84,6 +84,14 @@
             <li>
               <label for="song">Songs</label>
               <input id="song" type="text" name="song" placeholder="enter song here">
+            </li>
+            <li>
+              <label for="startdate">Start</label>
+              <input id="startdate" type="date" name="startdate" value="2016-07-03" min="2016-07-03" max="2019-11-22">
+            </li>
+            <li>
+              <label for="enddate">End</label>
+              <input id="enddate" type="date" name="enddate" value="2019-11-22" min="2016-07-03" max="2019-11-22">
             </li>
             <li>
               <label for="artist">Artists</label>
