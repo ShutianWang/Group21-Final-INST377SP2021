@@ -1,4 +1,5 @@
 const amountToDisplay = 50;
+const maxAmountToDisplay = 355;
 
 async function getTable() {
     const request = await fetch('/api/artisticMovement');
@@ -13,6 +14,10 @@ async function windowActions() {
 }
 
 async function getData() {
+
+    let i = 0;
+    let interval = Math.floor(maxAmountToDisplay / amountToDisplay);
+
     const songs = await fetch("/api/songs");
     const songsData = await songs.json();
 
@@ -39,8 +44,13 @@ async function getData() {
 
         return {x: new Date(parts[0], parts[1] - 1, parts[2]), y: Number(peakOnChart), indexLabel: item.song_name}
         //return {name:item.song_name, artist:songArtist, genre:songGenre, peakposition:peakOnChart, release:albumReleaseDate}
-    });
     
+    });
+
+    results.sort(function(a, b) {
+        return b.x - a.x
+    })
+
    loadVisualization(results);
 }
 
