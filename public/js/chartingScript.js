@@ -17,9 +17,9 @@ async function chartingTable() {
     console.log(chartingData);
     
     chartingData.forEach((item) => {
-        let chartSong = songsData[item.song_id]
-        let ChArtist = artistData[item.song_id].artist_name;
-        let chartGenre = genreData[chartSong.genre_id].genre_name;
+        let chartSong = songsData[item.song_id-1]
+        let ChArtist = artistData[item.song_id-1].artist_name;
+        let chartGenre = genreData[chartSong.genre_id-1].genre_name;
 
         const appendItem = document.createElement('tr');
         appendItem.innerHTML = `<td>${item.charting_id}</td>

@@ -19,7 +19,7 @@ async function albumTable() {
 
     
     albumData.forEach((item) => {
-        let albumArtist = artistData[item.artist_id].artist_name;
+        let albumArtist = artistData[item.artist_id-1].artist_name;
         
 
         console.log(item)
