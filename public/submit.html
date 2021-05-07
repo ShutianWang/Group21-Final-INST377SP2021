@@ -49,12 +49,87 @@
           </div>
       </nav>
     
-    <div class="title">
-        <h1>Submit</h1>
+    <div>
+        <h1 class="title is-1">Submit</h1>
     </div>
 
-    <div>
-        <!-- well probably need to make this form much more extensive to include all params in db -->
+    <form>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-medium">
+          <label class="label">Artist Name</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <input class="input is-danger" type="text">
+            </div>
+            <p class="help is-danger">
+              This field is required
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-medium">
+          <label class="label">Song Title</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <input class="input is-danger" type="text">
+            </div>
+            <p class="help is-danger">
+              This field is required
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-medium">
+          <label class="label">Album Title</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <input class="input is-black" type="text">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-medium">
+          <label class="label">Release Year</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <input class="input is-black" type="text">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="field-label is-medium">
+          <label class="label">Description</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <textarea class="textarea is-black"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </form>
+    
+    <!-- <div>
+        well probably need to make this form much more extensive to include all params in db
         <form>
             <ul class="flex-outer">
                 <li>
@@ -84,7 +159,7 @@
               </li>
             </ul>
         </form>
-    </div>
+    </div> -->
 
     <footer class="footer">
         <div class="content has-text-centered">

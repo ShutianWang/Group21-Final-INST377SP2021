@@ -2,16 +2,26 @@ html{
     background-color: #222222;
 }
 
-footer {
+p {
+    line-height: 2rem;
+}
+
+.footer {
     margin-top: 2rem;
+    background-color: black;
+    color: white;
 }
 
-footer p {
-    color: black;
-}
-
-#logo {
+#logo, strong {
     color: #777777;
+}
+
+section.hero {
+    background-image: linear-gradient(rgba(255, 120, 185, .3), rgba(0, 0, 0, 1));
+}
+
+.container > .navbar .navbar-menu, .navbar > .container .navbar-menu {
+    margin-right: 0;
 }
 
 .title {
@@ -20,15 +30,23 @@ footer p {
 }
 
 .hero-body {
-    margin-right: -.75rem;
+    padding: 5rem 1.5rem;
 }
 
-.navbar-item.has-dropdown.is-active .navbar-link, .navbar-item.has-dropdown:focus .navbar-link, .navbar-item.has-dropdown:hover .navbar-link  {
+.field-label {
+    text-align: left;
+}
+
+.navbar-item {
+    padding: .5rem 2rem;
+}
+
+.navbar-item.has-dropdown.is-active .navbar-link, .navbar-item.has-dropdown:focus .navbar-link, .navbar-item.has-dropdown:hover .navbar-link{
     background-color: #555555;
 }
 
 
-.navbar-menu, .navbar-dropdown, .navbar-link:hover, .hero-body, .navbar {
+.navbar-menu, .navbar-dropdown, .navbar-link:hover, .navbar {
     background-color: black;
 }
 
@@ -37,10 +55,15 @@ a.navbar-item:hover, .navbar-dropdown a.navbar-item:hover, .navbar-link:hover, .
     background-color: #555555;
 }
 
-.navbar-item, .navbar-link, p, label {
+.navbar-item, .navbar-link, p, .label, label {
     color: #ffffff;
 }
 
-a.navbar-item.is-active, .title {
+a.navbar-item.is-active, .title, footer a {
     color: #FF3194;
+}
+
+.input, .select select, .textarea {
+    background-color: #555555;
+    color: black;
 }
