@@ -36,10 +36,10 @@
 
  <!-- center nav items -->
  
- <nav class="navbar" role="navigation" aria-label="main navigation">
+ <nav class="navbar" id="home-nav" role="navigation" aria-label="main navigation">
       
       <div id="navbarMenuMusic" class="navbar-menu">
-        <div class="navbar-end">
+        <div class="navbar-start">
           <a class="navbar-item is-active" href="index.html">
             Home
           </a>
@@ -103,8 +103,12 @@
               <input id="genre" type="text" name="genre" placeholder="enter genre here">
             </li>
             <li>
-              <label for="charting">Charting</label>
-              <input id="charting" type="text" name="charting" placeholder="enter charting info here">
+              <label for="chartingMin">Lowest Position</label>
+              <input id="chartingMin" type="text" name="chartingMin" placeholder="enter minimum charting info here">
+            </li>
+            <li>
+              <label for="chartingMax">Highest Position</label>
+              <input id="chartingMax" type="text" name="chartingMax" placeholder="enter maximum charting info here">
             </li>
             <li> this form will need to be thought through some more, maybe make these all radio/ check box things and just always show selected variables against time or time + charting?
             </li>

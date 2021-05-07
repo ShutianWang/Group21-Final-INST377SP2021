@@ -130,7 +130,22 @@ function filterData()
             _data = _data.filter((item) => item.genre == genre)
             console.log("gfilter", _data)
         }
+    
+    let chartingMin = document.getElementById("chartingMin").value;
+    let chartingMax = document.getElementById("chartingMax").value;
+        console.log(chartingMax, chartingMin)   
+        if(chartingMin == "")
+        {
+            chartingMin = "100"
+        }
+        if(chartingMax == "")
+        {
+            chartingMax == "1"
+        }
         
+        _data = _data.filter((item) => item.y >= chartingMax && item.y <= chartingMin)
+        
+    
 
         
 
