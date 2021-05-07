@@ -6,18 +6,28 @@ p {
     line-height: 2rem;
 }
 
+.table {
+    width: 100%;
+}
+
 .footer {
     margin-top: 2rem;
     background-color: black;
     color: white;
 }
 
-#logo, strong {
-    color: #777777;
+#logo, strong, .subtitle {
+    color: #999999;
 }
 
 section.hero {
-    background-image: linear-gradient(rgba(255, 120, 185, .3), rgba(0, 0, 0, 1));
+    background-image: url("https://live.staticflickr.com/2473/3818742276_af9960d642_b.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.hero-body {
+    background-image: linear-gradient(rgba(255, 120, 185, .6), rgba(0, 0, 0, 1));
 }
 
 .container > .navbar .navbar-menu, .navbar > .container .navbar-menu {
@@ -27,6 +37,11 @@ section.hero {
 .title {
     margin-top: 1.5rem;
     padding: 2rem 0;
+    font-weight: 300;
+}
+
+#home-nav .navbar-menu {
+    flex-grow: 0;
 }
 
 .hero-body {
@@ -50,12 +65,12 @@ section.hero {
     background-color: black;
 }
 
-a.navbar-item:hover, .navbar-dropdown a.navbar-item:hover, .navbar-link:hover, .navbar-dropdown a.navbar-item.is-active {
+a.navbar-item:hover, .navbar-dropdown a.navbar-item:hover, .navbar-link:hover, .navbar-link.is-active, .navbar-dropdown a.navbar-item.is-active {
     color: #FF3194;
     background-color: #555555;
 }
 
-.navbar-item, .navbar-link, p, .label, label {
+.navbar-item, .navbar-link, p, .label, label, #home-title {
     color: #ffffff;
 }
 
@@ -68,3 +83,8 @@ a.navbar-item.is-active, .title, footer a {
     color: black;
 }
 
+.navbar, .navbar-end, .navbar-menu, .navbar-start {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
