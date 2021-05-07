@@ -40,7 +40,7 @@ async function getData() {
 
         let parts = albumReleaseDate.split('-');
 
-        return {x: new Date(parts[0], parts[1] - 1, parts[2]), y: Number(peakOnChart), toolTipContent: `#{y}, {x}, ${item.song_name} by ${songArtist}, ${songGenre}`  }
+        return {x: new Date(parts[0], parts[1] - 1, parts[2]), y: Number(peakOnChart), toolTipContent: `#{y}, {x}, ${item.song_name} by ${songArtist}, ${songGenre}`, artist: songArtist, genre: songGenre  }
         //return {name:item.song_name, artist:songArtist, genre:songGenre, peakposition:peakOnChart, release:albumReleaseDate}
     
     });
@@ -134,16 +134,16 @@ function filterData()
     let chartingMin = document.getElementById("chartingMin").value;
     let chartingMax = document.getElementById("chartingMax").value;
         console.log(chartingMax, chartingMin)   
-        if(chartingMin == "")
-        {
-            chartingMin = "100"
+        if(chartingMin >= 1 && chartingMin <= 100 && chartingMax >= 1 && chartingMax <= 100 && chartingMax <= chartingMin){
+            _data = _data.filter((item) => item.y >= chartingMax && item.y <= chartingMin)
         }
-        if(chartingMax == "")
-        {
-            chartingMax == "1"
+        else{
+            chartingMin = 100;
+            chartingMax = 1;
+            _data = _data.filter((item) => item.y >= chartingMax && item.y <= chartingMin)
         }
         
-        _data = _data.filter((item) => item.y >= chartingMax && item.y <= chartingMin)
+        
         
     
 
