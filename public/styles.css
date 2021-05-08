@@ -27,7 +27,12 @@ p {
 #logo, strong, .subtitle {
     color: #999999;
 }
-
+.autoDrop{
+    color: white;
+}
+.autoDrop:hover {
+    background:rgba(255, 88, 169, 0.6);
+}
 section.hero {
     background-image: url("https://live.staticflickr.com/2473/3818742276_af9960d642_b.jpg");
     background-position: center;

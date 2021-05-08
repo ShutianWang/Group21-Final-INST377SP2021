@@ -90,9 +90,11 @@ function autocomplete(inp, arr) {
             /*create a DIV element for each matching element:*/
             artistList.push(arr[i].artist)
             b = document.createElement("DIV");
+            b.setAttribute("class", "autoDrop")
             /*make the matching letters bold:*/
             b.innerHTML = "<strong>" + arr[i].artist.substr(0, val.length) + "</strong>";
             b.innerHTML += arr[i].artist.substr(val.length);
+            
             /*insert a input field that will hold the current array item's value:*/
             b.innerHTML += "<input type='hidden' value='" + arr[i].artist + "'>";
             /*execute a function when someone clicks on the item value (DIV element):*/
@@ -115,6 +117,7 @@ function autocomplete(inp, arr) {
                 /*make the matching letters bold:*/
                 b.innerHTML = "<strong>" + arr[i].genre.substr(0, val.length) + "</strong>";
                 b.innerHTML += arr[i].genre.substr(val.length);
+                b.setAttribute("class", "autoDrop")
                 /*insert a input field that will hold the current array item's value:*/
                 b.innerHTML += "<input type='hidden' value='" + arr[i].genre + "'>";
                 /*execute a function when someone clicks on the item value (DIV element):*/
@@ -137,6 +140,7 @@ function autocomplete(inp, arr) {
                 /*make the matching letters bold:*/
                 b.innerHTML = "<strong>" + arr[i].song.substr(0, val.length) + "</strong>";
                 b.innerHTML += arr[i].song.substr(val.length);
+                b.setAttribute("class", "autoDrop")
                 /*insert a input field that will hold the current array item's value:*/
                 b.innerHTML += "<input type='hidden' value='" + arr[i].song + "'>";
                 /*execute a function when someone clicks on the item value (DIV element):*/
