@@ -74,47 +74,108 @@
     </nav>
 
     <div class="columns mt-5">
-      <div class="column">
-        <form onchange="filterData()">
-          <ul class="flex-outer">
-            <li>
-              <label for="song">Songs</label>
-              <input id="song" type="text" name="song" placeholder="enter song here">
-            </li>
-            <li>
-              <label for="startdate">Start</label>
-              <input id="startdate" type="date" name="startdate" value="2016-07-03" min="2016-07-03" max="2019-11-22">
-            </li>
-            <li>
-              <label for="enddate">End</label>
-              <input id="enddate" type="date" name="enddate" value="2019-11-22" min="2016-07-03" max="2019-11-22">
-            </li>
-            <li>
-              <label for="artist">Artists</label>
-              <input id="artist" type="text" name="artist" placeholder="enter artist here">
-            </li>
-            <li>
-              <label for= "genre">Genre</label>
-              <input id="genre" type="text" name="genre" placeholder="enter genre here">
-            </li>
-            <li>
-              <label for="chartingMin">Lowest Position</label>
-              <input id="chartingMin" type="text" name="chartingMin" placeholder="enter minimum position">
-            </li>
-            <li>
-              <label for="chartingMax">Highest Position</label>
-              <input id="chartingMax" type="text" name="chartingMax" placeholder="enter maximum position">
-            </li>
-          </ul>
-        </form>
-      </div>
+      <div class="column" id="search">
+        <div class="box">
+          <h2 class="title">Search</h2>
+          <form onchange="filterData()">
+            
+            <div class="field is-horizontal">
+              <div class="field-label is-medium">
+                <label class="label">Songs</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input id="song" class="input is-black" type="text" name="song" placeholder="enter song here">
+                  </div>
+                </div>
+              </div>           
+            </div>
+            <div class="field is-horizontal">
+              <div class="field-label is-medium">
+                <label class="label">Artists</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input id="artist" class="input is-black" type="text" name="artist" placeholder="enter artist here">
+                  </div>
+                </div>
+              </div>           
+            </div>
+            <div class="field is-horizontal">
+              <div class="field-label is-medium">
+                <label class="label">Genre</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input id="genre" class="input is-black" type="text" name="genre" placeholder="enter genre here">
+                  </div>
+                </div>
+              </div>           
+            </div>
 
-      <div class="column">
-        <div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;">
-
+            <ul class="flex-outer">
+            </ul>
+          </form>
         </div>
       </div>
 
+      <div class="column">
+        <div class="box">
+          <h2 class="title">Visualization</h2>
+          <div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+          <h2 class="title">Filters</h2>
+          <form onchange="filterData()">
+            <div class="field">
+              <div class="field-label is-normal">
+                <label class="label">Start</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input id="startdate" class="input is-black" type="date" name="startdate" value="2016-07-03" min="2016-07-03" max="2019-11-22">
+                  </div>
+                </div>
+              </div>    
+               <div class="field-label is-normal">
+                <label class="label">End</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input id="enddate" class="input is-black" type="date" name="enddate" value="2019-11-22" min="2016-07-03" max="2019-11-22">
+                  </div>
+                </div>
+              </div>          
+            </div>
+            
+            <div class="field">
+              <div class="field-label is-normal">
+                <label class="label">Lowest Position</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input id="chartingMin" class="input is-black" type="text" name="chartingMin" placeholder="enter minimum position">
+                  </div>
+                </div>
+              </div>    
+               <div class="field-label is-normal">
+                <label class="label">Highest Position</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input id="chartingMax" class="input is-black" type="text" name="chartingMax" placeholder="enter maximum position">
+                  </div>
+                </div>
+              </div>          
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
 
     <div class="buttons">

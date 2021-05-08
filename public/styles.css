@@ -10,6 +10,10 @@ p {
     width: 100%;
 }
 
+input {
+    margin-bottom: 1.5rem;
+}
+
 .footer {
     margin-top: 2rem;
     background-color: black;
@@ -40,6 +44,11 @@ section.hero {
     font-weight: 300;
 }
 
+.box .title {
+    padding: .5rem 0;
+    margin: 1rem 0;
+}
+
 #home-nav .navbar-menu {
     flex-grow: 0;
 }
@@ -56,12 +65,17 @@ section.hero {
     padding: .5rem 2rem;
 }
 
+.button {
+    background-color: #FF3194;
+    border: none;
+    color: white;
+}
+
 .navbar-item.has-dropdown.is-active .navbar-link, .navbar-item.has-dropdown:focus .navbar-link, .navbar-item.has-dropdown:hover .navbar-link{
     background-color: #555555;
 }
 
-
-.navbar-menu, .navbar-dropdown, .navbar-link:hover, .navbar {
+.navbar-menu, .navbar-dropdown, .navbar-link:hover, .navbar, .box {
     background-color: black;
 }
 
@@ -70,7 +84,7 @@ a.navbar-item:hover, .navbar-dropdown a.navbar-item:hover, .navbar-link:hover, .
     background-color: #555555;
 }
 
-.navbar-item, .navbar-link, p, .label, label, #home-title {
+.navbar-item, .navbar-link, p, .label, label, #home-title, ::placeholder {
     color: #ffffff;
 }
 
