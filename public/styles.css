@@ -10,7 +10,11 @@ p {
     width: 100%;
 }
 
-input {
+.field.is-horizontal {
+    margin-bottom: 2rem;
+}
+
+#filter input {
     margin-bottom: 1.5rem;
 }
 
